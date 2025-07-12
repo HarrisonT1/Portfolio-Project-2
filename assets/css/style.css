@@ -27,7 +27,7 @@ h1 {
   margin: auto;
   margin-top: 30px;
   border-radius: 20px;
-  font-size: 2.2em;
+  font-size: 2.5em;
   padding-top: 15px;
 }
 
@@ -106,31 +106,30 @@ footer {
   }
 
   .container{
-   width: 50%;
-   height: 90%;
+   width: 80%;
+   height: 80%;
   }
 
   h1 {
-    width: 50%;
-    font-size: 2em;
+    font-size: 3em;
   }
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
     .options-container{
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 6rem;
-    margin-top: 100px;
+    row-gap: 3rem;
+    margin-top: 75px;
     width: 80%;
   }
 
   .container{
-   width: 50%;
-   height: 90%;
+   width: 80%;
+   height: 80%;
   }
 
   h1 {
     width: 50%;
-    font-size: 5em;
+    font-size: 3em;
   }
-}
+} */

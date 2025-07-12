@@ -7,20 +7,20 @@
 body {
   font-family: var(--primary-font);
   box-sizing: border-box;
-  background: url(/assets/images/lumbridge-home-page.png) center center/cover no-repeat ;
+  background: url(/assets/images/lumbridge-home-page.png) center center/cover no-repeat;
+  margin: 0;
+  font-size: 0.4em;
   /* Used to make footer stick to bottom of the page */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  font-size: 0.7em;
 }
 
 h1 {
   text-align: center;
   background-color: #ffffff;
-  opacity: 0.55;
-  width: 50vw;
+  opacity: 0.7;
+  width: 80vw;
   height: 5vh;
   text-align: center;
   margin: auto;
@@ -49,12 +49,12 @@ nav {
 .container {
   text-align: center;
   background-color: #ffffff;
-  opacity: 0.55;
-  width: 50vw;
-  height: 50vh;
+  opacity: 0.7;
+  width: 80vw;
+  height: 70vh;
   border-radius: 20px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
   padding: 5px;
 }
@@ -63,4 +63,5 @@ footer {
   background-color: #ffffff;
   margin-top: auto;
   height: 5vh;
+  opacity: 0.7;
 }

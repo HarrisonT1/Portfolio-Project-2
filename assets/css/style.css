@@ -61,9 +61,35 @@ nav {
   padding: 5px;
 }
 
+.options-container {
+  display: grid;
+  margin: auto;
+  gap: 1rem;
+}
+
+.option {
+  height: 75px;
+  width: 75px;
+  background-color: rgb(8, 8, 8);
+  opacity: 0.9;
+  border: 1px solid hsla(0, 0%, 39%, 0.329);
+  border-radius: 10px;
+  align-content: center;
+  width: 80%;
+  margin: auto;
+  font-weight: bold;
+  color: white;
+}
+
 footer {
   background-color: #ffffff;
   margin-top: auto;
   height: 5vh;
   opacity: 0.7;
+}
+
+@media screen and (min-width: 756px) {
+  .options-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

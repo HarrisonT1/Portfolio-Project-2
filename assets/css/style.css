@@ -7,6 +7,7 @@
 body {
   font-family: var(--primary-font);
   box-sizing: border-box;
+  background: url(/assets/images/lumbridge-home-page.png) center center/cover no-repeat ;
   /* Used to make footer stick to bottom of the page */
   display: flex;
   flex-direction: column;

@@ -3,3 +3,19 @@
 :root {
   --primary-font: "inter", sans-serif;
 }
+
+body {
+  font-family: var(--primary-font);
+  box-sizing: border-box;
+  /* Used to make footer stick to bottom of the page */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+footer {
+  background-color: gray;
+  margin-top: auto;
+  height: 10vh;
+}

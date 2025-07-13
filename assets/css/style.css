@@ -4,6 +4,8 @@
   --primary-font: "inter", sans-serif;
 }
 
+/* Global */
+
 body {
   font-family: var(--primary-font);
   box-sizing: border-box;
@@ -34,6 +36,12 @@ h1 {
 h2{
   font-size: 2.5em;
 }
+
+.hidden {
+  display: none;
+}
+
+/* Global - end */
 
 ul {
   margin: 0;
@@ -98,14 +106,14 @@ footer {
 }
 
 @media screen and (min-width: 756px) {
-  .options-container{
+  .options-container {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
     margin-top: 75px;
     width: 80%;
   }
 
-  .container{
+  .container {
    width: 80%;
    height: 80%;
   }
@@ -133,3 +141,9 @@ footer {
     font-size: 3em;
   }
 } */
+
+@media screen and (min-width: 1200px){
+  .container, h1 {
+    max-width: 970px;
+  }
+}

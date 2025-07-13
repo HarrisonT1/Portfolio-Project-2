@@ -24,21 +24,19 @@ h1 {
   background-color: #ffffff;
   opacity: 0.7;
   width: 80vw;
-  height: 5vh;
   text-align: center;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 1vh;
   border-radius: 20px;
-  font-size: 2.5em;
-  padding-top: 15px;
-}
-
-h2 {
-  font-size: 2.5em;
+  padding: 2% 0;
 }
 
 .hidden {
   display: none;
+}
+
+#home-window #heading {
+  padding: 2%;
 }
 
 /* Global - end */
@@ -92,7 +90,7 @@ nav {
 }
 
 .option {
-  height: 55px;
+  height: 60px;
   background-color: rgb(8, 8, 8);
   opacity: 0.9;
   border: 1px solid hsla(0, 0%, 39%, 0.329);
@@ -138,8 +136,13 @@ footer {
 /* Media query for responsiveness */
 
 @media screen and (max-width: 756px) {
-  h1 {
-    font-size: 2em;
+
+  #home-window {
+    height: 70vh;
+  }  
+  
+  h1, h2 {
+    font-size: 2.5vw;
   }
 
   .options-container {
@@ -152,10 +155,10 @@ footer {
   .options-container {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     padding-top: 35px;
-    width: 80%;
-    gap: 7rem;
+    width: 100%;
+    gap: 4rem;
   }
 
   .option {
@@ -166,8 +169,8 @@ footer {
    width: 80%;
   }
 
-  h1 {
-    font-size: 3em;
+  h1, h2 {
+    font-size: 2.5vw;
   }
 }
 
@@ -194,4 +197,5 @@ footer {
   .container, h1 {
     max-width: 970px;
   }
+  
 }

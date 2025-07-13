@@ -88,7 +88,7 @@ nav {
 .options-container {
   display: grid;
   margin: auto;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .option {
@@ -141,13 +141,21 @@ footer {
   h1 {
     font-size: 2em;
   }
+
+  .options-container {
+    margin-top: 25px;
+  }
+
 }
 @media screen and (min-width: 756px) {
+
   .options-container {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
-    margin-top: 75px;
+    margin-top: 50px;
+    padding-top: 35px;
     width: 80%;
+    gap: 7rem;
   }
 
   .option {
@@ -156,7 +164,6 @@ footer {
 
   .container {
    width: 80%;
-   height: 80%;
   }
 
   h1 {

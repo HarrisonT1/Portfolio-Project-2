@@ -108,9 +108,14 @@ nav {
   padding-bottom: 5px;
 }
 
+.option:hover {
+  cursor: pointer;
+  background-color: rgb(46, 46, 46);;
+}
+
 #score {
   padding: 1%;
-  margin-top: 20%;
+  margin-top: 15%;
   font-size: 250%;
 }
 

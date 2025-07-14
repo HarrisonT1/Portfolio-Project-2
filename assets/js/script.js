@@ -43,7 +43,15 @@ function showGeneralKnowledgeQuestion(optionChoice) {
     console.log("hello")
     if (optionChoice === optionsArray[0]) {
       let question = generalKnowledgeQuestions[0].question;
+      let answers = generalKnowledgeQuestions[0].answers;
+      let correct = generalKnowledgeQuestions[0].correct;
       heading.textContent = question;
+      optionsContainer.classList.add("options-container")
+      optionsContainer.classList.remove("hidden")
+      for (let i = 0; i < options.length; i++) {
+        options[i].textContent = answers[i]
+      }
     }
+
   }, 2000);
 }

@@ -1,3 +1,6 @@
-function test(){
-  console.log("hello")
-}
+
+
+function selectTopic() {}
+function hideHomepage() {}
+function increamentScore() {}
+function correctAnswer() {}

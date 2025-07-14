@@ -1,5 +1,10 @@
 let optionsContainer = document.getElementById("options-container")
 let options = document.getElementsByClassName("option")
+let homeWindow = document.getElementById("home-window")
+let answerWindow = document.getElementById("answer-window")
+let answersBox = document.querySelectorAll("#answer-container div")
+let questionheading = document.getElementById("answer-window")
+let answerBoxArray = Array.from(answersBox)
 let optionsArray = Array.from(options)
 let score = document.getElementById("score")
 let heading = document.querySelector("#heading h2")
@@ -11,9 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
       hideHomepage();
       goodLuckMessage(option);
       setTimeout(() => {
-        // heading.textContent = "";
+      showTopic(option);
       }, 2000);
-      showGeneralKnowledgeQuestion(option);
     })
   }
 });
@@ -21,13 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function goodLuckMessage(optionChoice) {
   if (optionChoice === optionsArray[0]) {
+    console.log("goodluck")
     heading.textContent = "Good Luck! You chose General Knowledge"
   }
 }
 
-function selectTopic() {
-
+function showTopic(optionChoice) {
+  console.log("hello")
+  if (optionChoice === optionsArray[0]) {
+    showGeneralKnowledgeQuestion(optionChoice)
+  }
 }
+
 function hideHomepage() {
   optionsContainer.classList.remove("options-container")
   optionsContainer.classList.add("hidden")
@@ -46,21 +55,18 @@ function correctAnswer() {
 
 
 function showGeneralKnowledgeQuestion(optionChoice) {
-  setTimeout(() => {
-    console.log(generalKnowledgeQuestions[0].question); 
-    console.log("hello")
-    if (optionChoice === optionsArray[0]) {
-      let question = generalKnowledgeQuestions[0].question;
-      let answers = generalKnowledgeQuestions[0].answers;
-      let correct = generalKnowledgeQuestions[0].correct;
-      heading.textContent = question;
-      optionsContainer.classList.add("options-container")
-      optionsContainer.classList.remove("hidden")
-      for (let i = 0; i < options.length; i++) {
-        options[i].textContent = answers[i]
-      }
-      options.addEventListener("click", correctAnswer)
+  console.log(generalKnowledgeQuestions[0].question); 
+  console.log("showGKQ")
+  if (optionChoice === optionsArray[0]) {
+    console.log("showGKQ")
+    let question = generalKnowledgeQuestions[0].question;
+    let answers = generalKnowledgeQuestions[0].answers;
+    let correct = generalKnowledgeQuestions[0].correct;
+    questionheading.textContent = question;
+    homeWindow.classList.add("hidden")
+    answerWindow.classList.remove("hidden")
+    for (let i = 0; i < options.length; i++) {
+      options[i].textContent = answers[i]
     }
-
-  }, 2000);
+  }
 }

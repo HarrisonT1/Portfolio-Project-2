@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
       hideHomepage();
       goodLuckMessage(option);
       setTimeout(() => {
-        heading.textContent = "";
+        // heading.textContent = "";
       }, 2000);
+      showGeneralKnowledgeQuestion(option);
     })
   }
 });
@@ -34,3 +35,15 @@ function hideHomepage() {
 }
 function increamentScore() {}
 function correctAnswer() {}
+
+
+function showGeneralKnowledgeQuestion(optionChoice) {
+  setTimeout(() => {
+    console.log(generalKnowledgeQuestions[0].question); 
+    console.log("hello")
+    if (optionChoice === optionsArray[0]) {
+      let question = generalKnowledgeQuestions[0].question;
+      heading.textContent = question;
+    }
+  }, 2000);
+}

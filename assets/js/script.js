@@ -1,11 +1,14 @@
 let optionsContainer = document.getElementById("options-container")
-let options = document.getElementsByClassName("option")
 let homeWindow = document.getElementById("home-window")
 let answerWindow = document.getElementById("answer-window")
+let questionHeading = document.getElementById("question-heading")
+
 let answersBox = document.querySelectorAll("#answer-container div")
-let questionheading = document.getElementById("answer-window")
 let answerBoxArray = Array.from(answersBox)
+
+let options = document.getElementsByClassName("option")
 let optionsArray = Array.from(options)
+
 let score = document.getElementById("score")
 let heading = document.querySelector("#heading h2")
 
@@ -56,17 +59,19 @@ function correctAnswer() {
 
 function showGeneralKnowledgeQuestion(optionChoice) {
   console.log(generalKnowledgeQuestions[0].question); 
-  console.log("showGKQ")
+
   if (optionChoice === optionsArray[0]) {
-    console.log("showGKQ")
     let question = generalKnowledgeQuestions[0].question;
     let answers = generalKnowledgeQuestions[0].answers;
     let correct = generalKnowledgeQuestions[0].correct;
-    questionheading.textContent = question;
+
+    questionHeading.textContent = question;
     homeWindow.classList.add("hidden")
     answerWindow.classList.remove("hidden")
-    for (let i = 0; i < options.length; i++) {
-      options[i].textContent = answers[i]
+
+    for (let i = 0; i < answerBoxArray.length; i++) {
+      answerBoxArray[i].textContent = answers[i]
+      console.log(answers)
     }
   }
 }

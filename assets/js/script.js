@@ -34,7 +34,15 @@ function hideHomepage() {
   score.classList.add("hidden")
 }
 function increamentScore() {}
-function correctAnswer() {}
+
+function correctAnswer() {
+  let correct = generalKnowledgeQuestions[0].correct;
+  if (answers === correct){
+    options.classList.add("correct-answer")
+  } else {
+    options.classList.add("incorrect-answer")
+  }
+}
 
 
 function showGeneralKnowledgeQuestion(optionChoice) {
@@ -51,6 +59,7 @@ function showGeneralKnowledgeQuestion(optionChoice) {
       for (let i = 0; i < options.length; i++) {
         options[i].textContent = answers[i]
       }
+      options.addEventListener("click", correctAnswer)
     }
 
   }, 2000);

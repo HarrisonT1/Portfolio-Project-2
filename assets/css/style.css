@@ -84,6 +84,16 @@ nav {
   padding: 5px;
 }
 
+/* correct answer colour */
+
+.incorrect-answer {
+  background-color: red
+}
+
+.correct-answer {
+  background-color: green;
+}
+
 /* homepage */
 
 .options-container {

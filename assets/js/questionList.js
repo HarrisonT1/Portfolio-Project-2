@@ -1,7 +1,13 @@
-const generalKnowledgeQuestions = {}
+const generalKnowledgeQuestions = [
+  {
+    question: "Who was the first player to achieve the Infernal Cape?",
+    answers: ["B0aty", "I piay alone", "Woox", "Bztm"],
+    correct: [3]
+  }
+]
 
-const bossingQuestions = {}
+const bossingQuestions = [{}]
 
-const skillingQuestions = {}
+const skillingQuestions = [{}]
 
-const itemsQuestions = {}
+const itemsQuestions = [{}]

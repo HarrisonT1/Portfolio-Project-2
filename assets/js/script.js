@@ -73,6 +73,11 @@ function correctAnswer(choice, index) {
       choice.classList.add("incorrect-answer")
       console.log("incorrect!")
     }
+
+    Array.from(options).forEach(option => {
+      options.style.pointerEvents = "none";
+    });
+
   }
 }
 

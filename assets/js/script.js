@@ -21,10 +21,10 @@ const question = generalKnowledgeQuestions[0].question;
 const answers = generalKnowledgeQuestions[0].answers;
 
 const selectedTopic = [
-  showGeneralKnowledgeQuestion(),
-  // showBossingQusetion(),
-  // showSkillingQuestion(),
-  // showItemsQuestion(),
+  showGeneralKnowledgeQuestion,
+  showBossingQuestion,
+  showSkillingQuestion,
+  showItemsQuestion,
 ]
 
 let optionChoice = false;
@@ -54,11 +54,10 @@ for (let option of optionsArray) {
 }
 
 function showTopic(optionChoice) {
-for (let option of optionsArray) {
-  if (optionChoice === option) {
-    for (let i = 0; i < optionsArray.length; i++) {
-      selectedTopic[i](optionChoice)
-    }
+for (let i = 0; i < optionsArray.length; i++) {
+  if (optionChoice === optionsArray[i]) {
+    selectedTopic[i](optionChoice);
+    break;
   }
 }
 
@@ -113,3 +112,15 @@ function showGeneralKnowledgeQuestion(optionChoice) {
     }
   }
 }
+
+function showBossingQuestion(optionChoice) {
+  console.log("bossing")
+};
+
+function showSkillingQuestion(optionChoice) {
+  console.log("skilling")
+};
+
+function showItemsQuestion(optionChoice) {
+  console.log("items")
+};

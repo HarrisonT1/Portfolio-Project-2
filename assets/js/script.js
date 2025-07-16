@@ -18,8 +18,8 @@ let heading = document.querySelector("#heading h2")
 
 // variables from questionListjs
 
-const question = generalKnowledgeQuestions[0].question;
-const answers = generalKnowledgeQuestions[0].answers;
+let questionArray = [];
+let questionIndex = 0;
 
 const selectedTopic = [
   showGeneralKnowledgeQuestion,
@@ -52,31 +52,39 @@ function goodLuckMessage(optionChoice) {
       heading.textContent = `Good Luck! You chose ${optionChoice.textContent}`;
     }
   }
-  }
+}
 
 function showTopic(optionChoice) {
+  // const questionArray = optionChoice[questionArray]
   for (let i = 0; i < optionsArray.length; i++) {
-    if (optionChoice === optionsArray[i]) {
-      selectedTopic[i](optionChoice);
-      break;
-    }
+
   }
   correctScore = 0;
-  score.classList.remove("hidden")
+  showGeneralKnowledgeQuestion(optionChoice)
 }
 
 function hideHomepage() {
   optionsContainer.classList.remove("options-container")
   optionsContainer.classList.add("hidden")
 }
+
+function newQuestion() {
+  questionIndex++
+  if (questionIndex < generalKnowledgeQuestions.length) {
+    
+  }
+}
+
 function increamentScore() {
+  
   if (correctAnswer) {
+    score.classList.remove("hidden")
     correctScore++
     score.textContent = `Correct answers: ${correctScore}`
   }
 }
 
-function correctAnswer(choice, index) {
+function correctAnswer(choice, index, questionArray) {
   for (let i = 0; i < choiceBoxArray.length; i++) {
 
     let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[index].correct;
@@ -94,23 +102,26 @@ function correctAnswer(choice, index) {
       choice.classList.add("incorrect-answer")
     }
     console.log(correctScore)
+    questionIndex++
   }
 }
 
 
 function showGeneralKnowledgeQuestion(optionChoice) {
-  
+  questionArray = generalKnowledgeQuestions;
   if (optionChoice === optionsArray[0]) {
-    questionHeading.textContent = question;
-    homeWindow.classList.add("hidden")
-    answerWindow.classList.remove("hidden")
+    let mainQuestion = questionArray[questionIndex];
+
+    questionHeading.textContent = mainQuestion.question;
+    homeWindow.classList.add("hidden");
+    answerWindow.classList.remove("hidden");
     
     for (let i = 0; i < choiceBoxArray.length; i++) {
-      let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[i].correct;
-      choiceBoxArray[i].textContent = answers[i].option;
+      let correctQuestionAnswer = mainQuestion.answers[i].correct;
+      choiceBoxArray[i].textContent = mainQuestion.answers[i].option;
 
       choiceBoxArray[i].addEventListener("click", function() {
-      correctAnswer(this, i)
+      correctAnswer(this, i, generalKnowledgeQuestions)
     })
     }
   }

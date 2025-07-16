@@ -66,6 +66,10 @@ function correctAnswer(choice, index) {
 
     let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[index].correct;
 
+    choiceBoxArray.forEach(option => {
+      option.style.pointerEvents = "none";
+    });
+    
     if (correctQuestionAnswer){
       choice.classList.add("correct-answer")
       console.log("CORRECT!")
@@ -74,9 +78,7 @@ function correctAnswer(choice, index) {
       console.log("incorrect!")
     }
 
-    Array.from(options).forEach(option => {
-      options.style.pointerEvents = "none";
-    });
+
 
   }
 }

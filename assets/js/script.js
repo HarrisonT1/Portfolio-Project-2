@@ -41,10 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function goodLuckMessage(optionChoice) {
-  if (optionChoice === optionsArray[0]) {
-    console.log("goodluck")
-    heading.textContent = "Good Luck! You chose General Knowledge"
+for (let option of optionsArray) {
+  if (optionChoice === option) {
+    heading.textContent = `Good Luck! You chose ${optionChoice.textContent}`;
   }
+}
 }
 
 function showTopic(optionChoice) {
@@ -62,7 +63,6 @@ function increamentScore() {
 }
 
 function correctAnswer(choice, index) {
-  console.log(correctAnswer)
   for (let i = 0; i < choiceBoxArray.length; i++) {
 
     let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[index].correct;

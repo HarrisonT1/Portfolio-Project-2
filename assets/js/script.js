@@ -19,8 +19,13 @@ let heading = document.querySelector("#heading h2")
 
 const question = generalKnowledgeQuestions[0].question;
 const answers = generalKnowledgeQuestions[0].answers;
-// let correct = generalKnowledgeQuestions[0].correct[0];
-console.log(answers, question)
+
+const selectedTopic = [
+  showGeneralKnowledgeQuestion(),
+  // showBossingQusetion(),
+  // showSkillingQuestion(),
+  // showItemsQuestion(),
+]
 
 let optionChoice = false;
 
@@ -49,9 +54,17 @@ for (let option of optionsArray) {
 }
 
 function showTopic(optionChoice) {
-  if (optionChoice === optionsArray[0]) {
-    showGeneralKnowledgeQuestion(optionChoice)
-  } 
+for (let option of optionsArray) {
+  if (optionChoice === option) {
+    for (let i = 0; i < optionsArray.length; i++) {
+      selectedTopic[i](optionChoice)
+    }
+  }
+}
+
+  // if (optionChoice === optionsArray[0]) {
+  //   showGeneralKnowledgeQuestion(optionChoice)
+  // } 
 }
 
 function hideHomepage() {

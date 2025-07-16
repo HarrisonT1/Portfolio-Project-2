@@ -7,11 +7,6 @@ let questionHeading = document.querySelector("#question-heading h2")
 let choice = document.getElementsByClassName("answer")
 let choiceBoxArray = Array.from(choice)
 
-let choice1 = document.querySelector('[data-number="1"]')
-let choice2 = document.querySelector('[data-number="2"]')
-let choice3 = document.querySelector('[data-number="3"]')
-let choice4 = document.querySelector('[data-number="4"]')
-
 // options when chosing a topic 
 let options = document.getElementsByClassName("option")
 let optionsArray = Array.from(options)
@@ -21,10 +16,11 @@ let score = document.getElementById("score")
 let heading = document.querySelector("#heading h2")
 
 // variables from questionListjs
-let question = generalKnowledgeQuestions[0].question;
-let answers = generalKnowledgeQuestions[0].answers;
-let correct = generalKnowledgeQuestions[0].correct[0];
-console.log(correct, answers, question)
+
+const question = generalKnowledgeQuestions[0].question;
+const answers = generalKnowledgeQuestions[0].answers;
+// let correct = generalKnowledgeQuestions[0].correct[0];
+console.log(answers, question)
 
 let optionChoice = false;
 
@@ -54,7 +50,7 @@ function goodLuckMessage(optionChoice) {
 function showTopic(optionChoice) {
   if (optionChoice === optionsArray[0]) {
     showGeneralKnowledgeQuestion(optionChoice)
-  }
+  } 
 }
 
 function hideHomepage() {
@@ -65,35 +61,36 @@ function hideHomepage() {
 function increamentScore() {}
 
 function correctAnswer(choice, index) {
-  document.addEventListener("click", function() {
+  console.log(correctAnswer)
+  for (let i = 0; i < choiceBoxArray.length; i++) {
 
-    // let correctAnswer = answerBoxArray.value;
-    console.log(correct)
+    let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[index].correct;
 
-    for (let i = 0; i < choiceBoxArray.length; i++) {
-      choiceBoxArray[i].textContent = answers[i]
-    }
-
-    if (correct === choice){
-      correct.classList.add("correct-answer")
+    if (correctQuestionAnswer){
+      choice.classList.add("correct-answer")
       console.log("CORRECT!")
     } else {
       choice.classList.add("incorrect-answer")
+      console.log("incorrect!")
     }
-  })
+  }
 }
 
 
 function showGeneralKnowledgeQuestion(optionChoice) {
-
+  
   if (optionChoice === optionsArray[0]) {
     questionHeading.textContent = question;
     homeWindow.classList.add("hidden")
     answerWindow.classList.remove("hidden")
     
     for (let i = 0; i < choiceBoxArray.length; i++) {
-      choiceBoxArray[i].textContent = answers[i]
+      let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[i].correct;
+      choiceBoxArray[i].textContent = answers[i].option;
+
+      choiceBoxArray[i].addEventListener("click", function() {
+      correctAnswer(this, i)
+    })
     }
-    correctAnswer()
   }
 }

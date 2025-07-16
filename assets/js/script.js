@@ -58,7 +58,9 @@ function hideHomepage() {
   optionsContainer.classList.add("hidden")
   score.classList.add("hidden")
 }
-function increamentScore() {}
+function increamentScore() {
+  console.log("test")
+}
 
 function correctAnswer(choice, index) {
   console.log(correctAnswer)
@@ -71,15 +73,15 @@ function correctAnswer(choice, index) {
     });
     
     if (correctQuestionAnswer){
+      choice.classList.remove("option-background")
       choice.classList.add("correct-answer")
       console.log("CORRECT!")
     } else {
+      choice.classList.remove("option-background")
       choice.classList.add("incorrect-answer")
       console.log("incorrect!")
     }
-
-
-
+    increamentScore();
   }
 }
 

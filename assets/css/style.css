@@ -87,7 +87,7 @@ nav {
 /* correct answer colour */
 
 .incorrect-answer {
-  background-color: red
+  background-color: red;
 }
 
 .correct-answer {
@@ -104,7 +104,6 @@ nav {
 
 .option {
   height: 40px;
-  background-color: rgb(8, 8, 8);
   opacity: 0.9;
   border: 1px solid hsla(0, 0%, 39%, 0.329);
   border-radius: 10px;
@@ -116,6 +115,10 @@ nav {
   font-size: 2em;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.option-background {
+  background-color: rgb(8, 8, 8);
 }
 
 .option:hover {

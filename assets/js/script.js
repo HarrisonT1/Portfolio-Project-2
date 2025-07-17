@@ -61,6 +61,8 @@ function showTopic(optionChoice) {
     questionArray = itemsQuestions;
   }
 
+  score.classList.remove("hidden")
+  score.textContent = `Correct answers: ${correctScore}/5`
   // selects question once one of the above is met 
   newQuestion()
 }
@@ -75,33 +77,44 @@ function newQuestion() {
     option.style.pointerEvents = "auto";
   });
 
-  if (questionIndex < questionArray.length) {
+  if (questionIndex < questionArray.length || questionIndex < 4) {
     let newQ = questionArray[questionIndex];
     questionHeading.textContent = newQ.question;
-  }
+    console.log(questionIndex)
+  
 
-  let mainQuestion = questionArray[questionIndex];
+    let mainQuestion = questionArray[questionIndex];
 
-  questionHeading.textContent = mainQuestion.question;
-  homeWindow.classList.add("hidden");
-  answerWindow.classList.remove("hidden");
+    questionHeading.textContent = mainQuestion.question;
+    homeWindow.classList.add("hidden");
+    answerWindow.classList.remove("hidden");
 
-  for (let i = 0; i < choiceBoxArray.length; i++){
-    let btn = choiceBoxArray[i];
-    let answer = questionArray[questionIndex].answers[i];
-    
-    btn.textContent = answer.option;
+    for (let i = 0; i < choiceBoxArray.length; i++){
 
-    btn.onclick = function() {
-      correctAnswer(btn, i)
+      let option = choiceBoxArray[i]
+
+      option.classList.add("option-background")
+      option.classList.remove("correct-answer")
+
+      let btn = choiceBoxArray[i];
+      let answer = questionArray[questionIndex].answers[i];
+      
+      btn.textContent = answer.option;
+
+      btn.onclick = function() {
+        correctAnswer(btn, i)
+      }
     }
   }
 }
 
 function increamentScore() {
-  score.classList.remove("hidden")
   correctScore++
-  score.textContent = `Correct answers: ${correctScore}`
+}
+
+function finishQuiz() {
+  option.classList.remove("option")
+  questionHeading.textContent = `congratulations you finished the quiz. Your score was ${correctScore}`
 }
 
 function correctAnswer(btn, i) {
@@ -119,7 +132,6 @@ function correctAnswer(btn, i) {
     option.classList.remove("option-background")
     option.classList.add("incorrect-answer")
   }
-  console.log(correctScore)
 
   setTimeout(() => {
     questionIndex++

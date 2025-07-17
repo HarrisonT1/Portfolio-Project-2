@@ -68,7 +68,7 @@ function hideHomepage() {
   optionsContainer.classList.add("hidden")
 }
 
-function newQuestion() {
+function newQuestion(nextQuestion) {
   
   choiceBoxArray.forEach(option => {
     option.style.pointerEvents = "auto";
@@ -107,6 +107,7 @@ function correctAnswer(choice, index, questionArray) {
 
     setTimeout(() => {
       questionIndex++
+      newQuestion(nextQuestion)
     })
     
   }

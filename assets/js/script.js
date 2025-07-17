@@ -105,28 +105,24 @@ function increamentScore() {
 }
 
 function correctAnswer(btn, i) {
-  for (let i = 0; i < choiceBoxArray.length; i++) {
-
-    let correctQuestionAnswer = questionArray[questionIndex].answers[i].correct;
-    let option = choiceBoxArray[i]
-
-    choiceBoxArray.forEach(option => {
-      option.style.pointerEvents = "none";
-    });
-    
-    if (correctQuestionAnswer){
-      option.classList.remove("option-background")
-      option.classList.add("correct-answer")
-      increamentScore();
-    } else {
-      option.classList.remove("option-background")
-      option.classList.add("incorrect-answer")
-    }
-    console.log(correctScore)
-
-    setTimeout(() => {
-      questionIndex++
-      newQuestion();
-    }, 2000)
+  let correctQuestionAnswer = questionArray[questionIndex].answers[i].correct;
+  let option = choiceBoxArray[i]
+  choiceBoxArray.forEach(option => {
+    option.style.pointerEvents = "none";
+  });
+  
+  if (correctQuestionAnswer){
+    option.classList.remove("option-background")
+    option.classList.add("correct-answer")
+    increamentScore();
+  } else {
+    option.classList.remove("option-background")
+    option.classList.add("incorrect-answer")
   }
+  console.log(correctScore)
+
+  setTimeout(() => {
+    questionIndex++
+    newQuestion();
+  }, 2000)
 }

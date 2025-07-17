@@ -53,9 +53,9 @@ function showTopic(optionChoice) {
 
   if (optionChoice === optionsArray[0]) {
     questionArray = generalKnowledgeQuestions;
-  } else if (optionChoice === optionsArray[1]) {
-    questionArray = bossingQuestions;
   } else if (optionChoice === optionsArray[2]) {
+    questionArray = bossingQuestions;
+  } else if (optionChoice === optionsArray[1]) {
     questionArray = skillingQuestions;
   } else if (optionChoice === optionsArray[3]) {
     questionArray = itemsQuestions;
@@ -71,7 +71,6 @@ function hideHomepage() {
 }
 
 function newQuestion() {
-  
   choiceBoxArray.forEach(option => {
     option.style.pointerEvents = "auto";
   });
@@ -131,51 +130,3 @@ function correctAnswer(btn, i) {
     }, 2000)
   }
 }
-
-
-// function showGeneralKnowledgeQuestion() {
-//   questionIndex = 0;
-//   correctScore = 0
-//   if (optionChoice === optionsArray[0]) {
-//     let mainQuestion = questionArray[questionIndex];
-
-//     questionHeading.textContent = mainQuestion.question;
-//     // homeWindow.classList.add("hidden");
-//     // answerWindow.classList.remove("hidden");
-    
-//     for (let i = 0; i < choiceBoxArray.length; i++) {
-//       let correctQuestionAnswer = mainQuestion.answers[i].correct;
-//       choiceBoxArray[i].textContent = mainQuestion.answers[i].option;
-
-//       choiceBoxArray[i].addEventListener("click", function() {
-//       correctAnswer(this, i, generalKnowledgeQuestions)
-//     })
-//     }
-//   }
-//   newQuestion(generalKnowledgeQuestions)
-// }
-
-// function showBossingQuestion(optionChoice) {
-  //   if (optionChoice === optionsArray[2]) {
-  //   questionHeading.textContent = question;
-  //   homeWindow.classList.add("hidden")
-  //   answerWindow.classList.remove("hidden")
-    
-  //   for (let i = 0; i < choiceBoxArray.length; i++) {
-  //     let correctQuestionAnswer = bossingQuestions[i].answers[i].correct;
-  //     choiceBoxArray[i].textContent = answers[i].option;
-
-  //     choiceBoxArray[i].addEventListener("click", function() {
-  //     correctAnswer(this, i)
-  //   })
-  //   }
-  // }
-// };
-
-// function showSkillingQuestion(optionChoice) {
-//   console.log("skilling")
-// };
-
-// function showItemsQuestion(optionChoice) {
-//   console.log("items")
-// };

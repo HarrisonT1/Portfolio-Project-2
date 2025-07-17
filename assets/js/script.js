@@ -113,8 +113,12 @@ function increamentScore() {
 }
 
 function finishQuiz() {
-  option.classList.remove("option")
-  questionHeading.textContent = `congratulations you finished the quiz. Your score was ${correctScore}`
+  if (questionIndex = 4) {
+    console.log("test")
+    let option = choiceBoxArray[i]
+    option.classList.remove("options-container")
+    score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}`
+  }
 }
 
 function correctAnswer(btn, i) {

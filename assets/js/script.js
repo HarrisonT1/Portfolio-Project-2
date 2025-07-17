@@ -59,7 +59,7 @@ function showTopic(optionChoice) {
     showGeneralKnowledgeQuestion(optionChoice)
   } else if (optionChoice === optionsArray[1]) {
     showBossingQuestion(optionChoice)
-  } 
+  };
 }
 
 function hideHomepage() {
@@ -68,9 +68,17 @@ function hideHomepage() {
 }
 
 function newQuestion() {
+
   questionIndex++
+
+  choiceBoxArray.forEach(option => {
+    option.style.pointerEvents = "auto";
+  });
+
   if (questionIndex < generalKnowledgeQuestions.length) {
-    
+    let newQ = generalKnowledgeQuestions[questionIndex]
+    questionHeading.textContent = newQ.question;
+
   }
 }
 
@@ -123,6 +131,7 @@ function showGeneralKnowledgeQuestion(optionChoice) {
       correctAnswer(this, i, generalKnowledgeQuestions)
     })
     }
+    newQuestion()
   }
 }
 

@@ -75,9 +75,12 @@ function newQuestion(nextQuestion) {
   });
 
   if (questionIndex < generalKnowledgeQuestions.length) {
-    let newQ = generalKnowledgeQuestions[questionIndex]
+    let newQ = questionSet[questionIndex];
     questionHeading.textContent = newQ.question;
+  }
 
+  for (let i = 0; choiceBoxArray.length; i++){
+    
   }
 }
 
@@ -108,7 +111,7 @@ function correctAnswer(choice, index, questionArray) {
     setTimeout(() => {
       questionIndex++
       newQuestion(nextQuestion)
-    })
+    }, 2000), 
     
   }
 }

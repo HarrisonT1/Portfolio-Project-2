@@ -2,19 +2,19 @@ const generalKnowledgeQuestions = [
   {
     question: "Who was the first player to achieve the Infernal Cape?",
     answers: [
-      {option1: "B0aty", correct: false},
-      {option2: "I piay alone", correct: false},
-      {option3: "Woox", correct: true},
-      {option4: "Bztm", correct: false},
+      {option: "B0aty", correct: false},
+      {option: "I piay alone", correct: false},
+      {option: "Woox", correct: true},
+      {option: "Bztm", correct: false},
     ]
   },
   {
     question: "test",
     answers: [
-      {option1: "test1", correct: false},
-      {option2: "test2", correct: false},
-      {option3: "test3", correct: true},
-      {option4: "test4", correct: false},
+      {option: "test1", correct: false},
+      {option: "test2", correct: false},
+      {option: "test3", correct: true},
+      {option: "test4", correct: false},
     ]
   }
 ]
@@ -23,10 +23,10 @@ const bossingQuestions = [
   {
     question: "What attack style is the Araxxor weak to?",
     answers: [
-      {option1: "Magic", correct: false},
-      {option2: "Slash", correct: false},
-      {option3: "Range", correct: false},
-      {option4: "Crush", correct: true},
+      {option: "Magic", correct: false},
+      {option: "Slash", correct: false},
+      {option: "Range", correct: false},
+      {option: "Crush", correct: true},
     ]
   }
 ]

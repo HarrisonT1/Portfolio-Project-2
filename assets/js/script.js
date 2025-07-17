@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (let option of options) {
     option.addEventListener("click", function() {
       if (optionChoice) return;
+      questionIndex = 0;
       hideHomepage();
       goodLuckMessage(option);
       setTimeout(() => {
@@ -68,9 +69,7 @@ function hideHomepage() {
 }
 
 function newQuestion() {
-
-  questionIndex++
-
+  
   choiceBoxArray.forEach(option => {
     option.style.pointerEvents = "auto";
   });
@@ -83,12 +82,9 @@ function newQuestion() {
 }
 
 function increamentScore() {
-  
-  if (correctAnswer) {
-    score.classList.remove("hidden")
-    correctScore++
-    score.textContent = `Correct answers: ${correctScore}`
-  }
+  score.classList.remove("hidden")
+  correctScore++
+  score.textContent = `Correct answers: ${correctScore}`
 }
 
 function correctAnswer(choice, index, questionArray) {
@@ -103,13 +99,16 @@ function correctAnswer(choice, index, questionArray) {
     if (correctQuestionAnswer){
       choice.classList.remove("option-background")
       choice.classList.add("correct-answer")
-      increamentScore()
     } else {
       choice.classList.remove("option-background")
       choice.classList.add("incorrect-answer")
     }
     console.log(correctScore)
-    questionIndex++
+
+    setTimeout(() => {
+      questionIndex++
+    })
+    
   }
 }
 
@@ -131,7 +130,6 @@ function showGeneralKnowledgeQuestion(optionChoice) {
       correctAnswer(this, i, generalKnowledgeQuestions)
     })
     }
-    newQuestion()
   }
 }
 

@@ -18,9 +18,6 @@ let heading = document.querySelector("#heading h2")
 
 // variables from questionListjs
 
-let questionArray = [];
-let questionIndex = 0;
-
 const selectedTopic = [
   showGeneralKnowledgeQuestion,
   showBossingQuestion,
@@ -56,11 +53,13 @@ function goodLuckMessage(optionChoice) {
 
 function showTopic(optionChoice) {
   // const questionArray = optionChoice[questionArray]
-  for (let i = 0; i < optionsArray.length; i++) {
-
-  }
+  questionIndex = 0;
   correctScore = 0;
-  showGeneralKnowledgeQuestion(optionChoice)
+  if (optionChoice === optionsArray[0]) {
+    showGeneralKnowledgeQuestion(optionChoice)
+  } else if (optionChoice === optionsArray[1]) {
+    showBossingQuestion(optionChoice)
+  } 
 }
 
 function hideHomepage() {

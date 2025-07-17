@@ -18,12 +18,9 @@ let heading = document.querySelector("#heading h2")
 
 // variables from questionListjs
 
-const selectedTopic = [
-  showGeneralKnowledgeQuestion,
-  showBossingQuestion,
-  showSkillingQuestion,
-  showItemsQuestion,
-]
+let questionIndex = 0;
+let questionArray = []
+
 
 let optionChoice = false;
 
@@ -53,14 +50,16 @@ function goodLuckMessage(optionChoice) {
 }
 
 function showTopic(optionChoice) {
-  // const questionArray = optionChoice[questionArray]
-  questionIndex = 0;
-  correctScore = 0;
+
   if (optionChoice === optionsArray[0]) {
-    showGeneralKnowledgeQuestion(optionChoice)
+    questionArray = generalKnowledgeQuestions;
   } else if (optionChoice === optionsArray[1]) {
-    showBossingQuestion(optionChoice)
-  };
+    questionArray = bossingQuestions;
+  } else if (optionChoice === optionsArray[2]) {
+    questionArray = skillingQuestions;
+  } else if (optionChoice === optionsArray[3]) {
+    questionArray = itemsQuestions;
+  }
 }
 
 function hideHomepage() {
@@ -90,10 +89,10 @@ function increamentScore() {
   score.textContent = `Correct answers: ${correctScore}`
 }
 
-function correctAnswer(choice, index, questionArray) {
+function correctAnswer(questionArray) {
   for (let i = 0; i < choiceBoxArray.length; i++) {
 
-    let correctQuestionAnswer = generalKnowledgeQuestions[0].answers[index].correct;
+    let correctQuestionAnswer = question.answers[i];
 
     choiceBoxArray.forEach(option => {
       option.style.pointerEvents = "none";
@@ -106,35 +105,37 @@ function correctAnswer(choice, index, questionArray) {
       choice.classList.remove("option-background")
       choice.classList.add("incorrect-answer")
     }
+    increamentScore()
     console.log(correctScore)
 
     setTimeout(() => {
       questionIndex++
       newQuestion(nextQuestion)
-    }, 2000), 
-    
+    }, 2000)
   }
 }
 
 
-function showGeneralKnowledgeQuestion(optionChoice) {
-  questionArray = generalKnowledgeQuestions;
-  if (optionChoice === optionsArray[0]) {
-    let mainQuestion = questionArray[questionIndex];
+function showGeneralKnowledgeQuestion() {
+  questionIndex = 0;
+  correctScore = 0
+  // if (optionChoice === optionsArray[0]) {
+  //   let mainQuestion = questionArray[questionIndex];
 
-    questionHeading.textContent = mainQuestion.question;
-    homeWindow.classList.add("hidden");
-    answerWindow.classList.remove("hidden");
+  //   questionHeading.textContent = mainQuestion.question;
+  //   homeWindow.classList.add("hidden");
+  //   answerWindow.classList.remove("hidden");
     
-    for (let i = 0; i < choiceBoxArray.length; i++) {
-      let correctQuestionAnswer = mainQuestion.answers[i].correct;
-      choiceBoxArray[i].textContent = mainQuestion.answers[i].option;
+  //   for (let i = 0; i < choiceBoxArray.length; i++) {
+  //     let correctQuestionAnswer = mainQuestion.answers[i].correct;
+  //     choiceBoxArray[i].textContent = mainQuestion.answers[i].option;
 
-      choiceBoxArray[i].addEventListener("click", function() {
-      correctAnswer(this, i, generalKnowledgeQuestions)
-    })
-    }
-  }
+  //     choiceBoxArray[i].addEventListener("click", function() {
+  //     correctAnswer(this, i, generalKnowledgeQuestions)
+  //   })
+  //   }
+  // }
+  newQuestion(generalKnowledgeQuestions)
 }
 
 function showBossingQuestion(optionChoice) {

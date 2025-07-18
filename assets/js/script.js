@@ -132,6 +132,7 @@ function correctAnswer(btn, i) {
     option.classList.remove("option-background")
     option.classList.add("correct-answer")
     increamentScore();
+    score.textContent = `Correct answers: ${correctScore}/5`
   } else {
     option.classList.remove("option-background")
     option.classList.add("incorrect-answer")

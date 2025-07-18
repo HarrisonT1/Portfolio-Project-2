@@ -105,18 +105,20 @@ function newQuestion() {
         correctAnswer(btn, i)
       }
     }
-  }
+
+  }   
+  finishQuiz()
 }
 
 function increamentScore() {
   correctScore++
 }
 
-function finishQuiz() {
-  if (questionIndex = 4) {
+function finishQuiz(i) {
+  if (questionIndex === 4) {
     console.log("test")
     let option = choiceBoxArray[i]
-    option.classList.remove("options-container")
+    optionsContainer.classList.add("hidden")
     score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}`
   }
 }

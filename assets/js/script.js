@@ -46,13 +46,13 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
   resetBtn.addEventListener("click", restartQuiz);
-  openRules.addEventListener("click", displayRules)
+  openRules.addEventListener("click", displayRules);
 });
 
 function displayRules() {
-  homeWindow.classList.add("hidden")
-  answerWindow.classList.add("hidden")
-  rulesTab.classList.remove("hidden")
+  homeWindow.classList.add("hidden");
+  answerWindow.classList.add("hidden");
+  rulesTab.classList.remove("hidden");
 }
 
 

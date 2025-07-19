@@ -107,6 +107,10 @@ nav {
 
 /* homepage */
 
+#home-window {
+ height: 559px;
+}
+
 .options-container {
   display: grid;
   margin: auto;
@@ -190,7 +194,7 @@ footer {
 @media screen and (max-width: 756px) {
 
   #home-window {
-    height: 70vh;
+    height: 559px;
   }  
   
   /* h1 {

@@ -2,6 +2,7 @@ let optionsContainer = document.getElementById("options-container")
 let homeWindow = document.getElementById("home-window")
 let answerWindow = document.getElementById("answer-window")
 let questionHeading = document.querySelector("#question-heading h2")
+let removeBtn = document.getElementById("answer-container")
 
 // choice of answer for questions
 let choice = document.getElementsByClassName("answer")
@@ -77,11 +78,10 @@ function newQuestion() {
     option.style.pointerEvents = "auto";
   });
 
-  if (questionIndex < questionArray.length || questionIndex < 4) {
+  if (questionIndex < questionArray.length) {
     let newQ = questionArray[questionIndex];
     questionHeading.textContent = newQ.question;
     console.log(questionIndex)
-  
 
     let mainQuestion = questionArray[questionIndex];
 
@@ -115,11 +115,13 @@ function increamentScore() {
 }
 
 function finishQuiz(i) {
-  if (questionIndex === 4) {
-    console.log("test")
-    let option = choiceBoxArray[i]
-    optionsContainer.classList.add("hidden")
-    score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}`
+  if (questionIndex === 5) {
+    console.log("test");
+    let option = choiceBoxArray[i];
+    removeBtn.classList.remove("options-container");
+    removeBtn.classList.add("hidden");
+    questionHeading.textContent = 'Would you like to select a new topic?';
+    score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}.`;
   }
 }
 

@@ -1,21 +1,22 @@
-let optionsContainer = document.getElementById("options-container")
-let homeWindow = document.getElementById("home-window")
-let answerWindow = document.getElementById("answer-window")
-let questionHeading = document.querySelector("#question-heading h2")
-let removeBtn = document.getElementById("answer-container")
+let optionsContainer = document.getElementById("options-container");
+let homeWindow = document.getElementById("home-window");
+let answerWindow = document.getElementById("answer-window");
+let questionHeading = document.querySelector("#question-heading h2");
+let removeBtn = document.getElementById("answer-container");
+let resetBtn = document.getElementById("reset-btn");
 
 // choice of answer for questions
-let choice = document.getElementsByClassName("answer")
-let choiceBoxArray = Array.from(choice)
+let choice = document.getElementsByClassName("answer");
+let choiceBoxArray = Array.from(choice);
 
 // options when chosing a topic 
-let options = document.getElementsByClassName("option")
-let optionsArray = Array.from(options)
+let options = document.getElementsByClassName("option");
+let optionsArray = Array.from(options);
 
 // score and heading elements
-let score = document.getElementById("score")
+let score = document.getElementById("score");
 let correctScore = 0;
-let heading = document.querySelector("#heading h2")
+let heading = document.querySelector("#heading h2");
 
 // variables from questionListjs
 
@@ -120,6 +121,7 @@ function finishQuiz(i) {
     let option = choiceBoxArray[i];
     removeBtn.classList.remove("options-container");
     removeBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
     questionHeading.textContent = 'Would you like to select a new topic?';
     score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}.`;
   }

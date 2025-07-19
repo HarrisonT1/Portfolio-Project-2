@@ -26,7 +26,7 @@ let heading = document.querySelector("#heading h2");
 // variables from questionListjs
 
 let questionIndex = 0;
-let questionArray = []
+let questionArray = [];
 
 
 let optionChoice = false;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
       optionChoice = true;
       showTopic(option);
       }, 2000);
-    })
+    });
   }
   resetBtn.addEventListener("click", restartQuiz);
   openRules.addEventListener("click", displayRules);
@@ -76,15 +76,15 @@ function showTopic(optionChoice) {
     questionArray = itemsQuestions;
   }
 
-  score.classList.remove("hidden")
-  score.textContent = `Correct answers: ${correctScore}/5`
+  score.classList.remove("hidden");
+  score.textContent = `Correct answers: ${correctScore}/5`;
   // selects question once one of the above is met 
-  newQuestion()
+  newQuestion();
 }
 
 function hideHomepage() {
-  optionsContainer.classList.remove("options-container")
-  optionsContainer.classList.add("hidden")
+  optionsContainer.classList.remove("options-container");
+  optionsContainer.classList.add("hidden");
 }
 
 function newQuestion() {
@@ -92,14 +92,13 @@ function newQuestion() {
     option.style.pointerEvents = "auto";
   });
 
-  removeBtn.classList.add("options-container")
-  removeBtn.classList.remove("hidden")
-  resetBtnContainer.classList.add("hidden")
+  removeBtn.classList.add("options-container");
+  removeBtn.classList.remove("hidden");
+  resetBtnContainer.classList.add("hidden");
 
   if (questionIndex < questionArray.length) {
     let newQ = questionArray[questionIndex];
     questionHeading.textContent = newQ.question;
-    console.log(questionIndex)
 
     let mainQuestion = questionArray[questionIndex];
 
@@ -109,10 +108,10 @@ function newQuestion() {
 
     for (let i = 0; i < choiceBoxArray.length; i++){
 
-      let option = choiceBoxArray[i]
+      let option = choiceBoxArray[i];
 
-      option.classList.add("option-background")
-      option.classList.remove("correct-answer")
+      option.classList.add("option-background");
+      option.classList.remove("correct-answer");
 
       let btn = choiceBoxArray[i];
       let answer = questionArray[questionIndex].answers[i];
@@ -134,7 +133,6 @@ function increamentScore() {
 
 function finishQuiz(i) {
   if (questionIndex === 5) {
-    console.log("test");
     let option = choiceBoxArray[i];
     removeBtn.classList.remove("options-container");
     removeBtn.classList.add("hidden");
@@ -148,35 +146,35 @@ function restartQuiz() {
   correctScore = 0;
   questionIndex = 0;
 
-  optionChoice = false
+  optionChoice = false;
 
   homeWindow.classList.remove("hidden");
   answerWindow.classList.add("hidden");
-  optionsContainer.classList.add("options-container")
-  optionsContainer.classList.remove("hidden")
-  heading.textContent = 'Please select the topic you would like to do!'
+  optionsContainer.classList.add("options-container");
+  optionsContainer.classList.remove("hidden");
+  heading.textContent = 'Please select the topic you would like to do!';
 
 }
 
 function correctAnswer(btn, i) {
   let correctQuestionAnswer = questionArray[questionIndex].answers[i].correct;
-  let option = choiceBoxArray[i]
+  let option = choiceBoxArray[i];
   choiceBoxArray.forEach(option => {
     option.style.pointerEvents = "none";
   });
   
   if (correctQuestionAnswer){
-    option.classList.remove("option-background")
-    option.classList.add("correct-answer")
+    option.classList.remove("option-background");
+    option.classList.add("correct-answer");
     increamentScore();
-    score.textContent = `Correct answers: ${correctScore}/5`
+    score.textContent = `Correct answers: ${correctScore}/5`;
   } else {
-    option.classList.remove("option-background")
-    option.classList.add("incorrect-answer")
+    option.classList.remove("option-background");
+    option.classList.add("incorrect-answer");
   }
 
   setTimeout(() => {
-    questionIndex++
+    questionIndex++;
     newQuestion();
-  }, 2000)
+  }, 2000);
 }

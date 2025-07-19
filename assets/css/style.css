@@ -91,7 +91,6 @@ nav {
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  text-align: center;
   padding: 5px;
 }
 
@@ -114,7 +113,8 @@ nav {
 .options-container {
   display: grid;
   margin: auto;
-  gap: 2rem;
+  gap: 3rem;
+  margin-top: 40px;
 }
 
 .option {

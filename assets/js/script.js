@@ -4,6 +4,7 @@ let answerWindow = document.getElementById("answer-window");
 let questionHeading = document.querySelector("#question-heading h2");
 let removeBtn = document.getElementById("answer-container");
 let resetBtn = document.getElementById("reset-btn");
+let resetBtnContainer = document.getElementById("reset-btn-container");
 
 // choice of answer for questions
 let choice = document.getElementsByClassName("answer");
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 2000);
     })
   }
+  resetBtn.addEventListener("click", restartQuiz);
 });
 
 
@@ -78,6 +80,10 @@ function newQuestion() {
   choiceBoxArray.forEach(option => {
     option.style.pointerEvents = "auto";
   });
+
+  removeBtn.classList.add("options-container")
+  removeBtn.classList.remove("hidden")
+  resetBtnContainer.classList.add("hidden")
 
   if (questionIndex < questionArray.length) {
     let newQ = questionArray[questionIndex];
@@ -121,10 +127,24 @@ function finishQuiz(i) {
     let option = choiceBoxArray[i];
     removeBtn.classList.remove("options-container");
     removeBtn.classList.add("hidden");
-    resetBtn.classList.remove("hidden");
+    resetBtnContainer.classList.remove("hidden");
     questionHeading.textContent = 'Would you like to select a new topic?';
     score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}.`;
   }
+}
+
+function restartQuiz() {
+  correctScore = 0;
+  questionIndex = 0;
+
+  optionChoice = false
+
+  homeWindow.classList.remove("hidden");
+  answerWindow.classList.add("hidden");
+  optionsContainer.classList.add("options-container")
+  optionsContainer.classList.remove("hidden")
+  heading.textContent = 'Please select the topic you would like to do!'
+
 }
 
 function correctAnswer(btn, i) {

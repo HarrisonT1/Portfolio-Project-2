@@ -132,7 +132,7 @@ nav {
   font-size: 250%;
 }
 
-#reset-btn button {
+#reset-btn {
   background-color: rgb(8, 8, 8);
   color: white;
   border-radius: 10px;
@@ -142,7 +142,7 @@ nav {
   margin-top: 40px;
 }
 
-#reset-btn button:hover {
+#reset-btn:hover {
   background-color: rgb(46, 46, 46);;
 }
 

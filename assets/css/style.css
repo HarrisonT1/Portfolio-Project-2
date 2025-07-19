@@ -178,6 +178,30 @@ nav {
 
 /* end of rules */
 
+/* Form */
+
+.form-item input, textarea {
+  margin: 20px 0;
+  width: 80%;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+#sumbit-btn {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-top: 10px;
+}
+
+#sumbit-btn:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
 /* footer */
 
 footer {

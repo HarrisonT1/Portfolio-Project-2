@@ -6,6 +6,10 @@ let removeBtn = document.getElementById("answer-container");
 let resetBtn = document.getElementById("reset-btn");
 let resetBtnContainer = document.getElementById("reset-btn-container");
 
+// rules tab
+let openRules = document.getElementById("open-rules")
+let rulesTab = document.getElementById("rules")
+
 // choice of answer for questions
 let choice = document.getElementsByClassName("answer");
 let choiceBoxArray = Array.from(choice);
@@ -42,7 +46,14 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
   resetBtn.addEventListener("click", restartQuiz);
+  openRules.addEventListener("click", displayRules)
 });
+
+function displayRules() {
+  homeWindow.classList.add("hidden")
+  answerWindow.classList.add("hidden")
+  rulesTab.classList.remove("hidden")
+}
 
 
 function goodLuckMessage(optionChoice) {

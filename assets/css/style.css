@@ -55,6 +55,17 @@ ul {
 
 li {
   margin: auto;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgb(105, 105, 105);
 }
 
 nav {

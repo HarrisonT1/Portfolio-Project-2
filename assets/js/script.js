@@ -5,7 +5,12 @@ let questionHeading = document.querySelector("#question-heading h2");
 let removeBtn = document.getElementById("answer-container");
 let resetBtn = document.getElementById("reset-btn");
 let resetBtnContainer = document.getElementById("reset-btn-container");
+
+// form
+let openForm = document.getElementById("open-form")
 let form = document.getElementById("form")
+let formSuccess = document.getElementById("form-success")
+let sumbitBtn = document.getElementById("sumbit-btn")
 
 // rules tab
 let openRules = document.getElementById("open-rules")
@@ -48,19 +53,27 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   resetBtn.addEventListener("click", restartQuiz);
   openRules.addEventListener("click", displayRules);
-  form.addEventListener("click",  displayForm)
+  openForm.addEventListener("click",  displayForm);
+  form.addEventListener("submit",  stopPageRefresh);
 });
 
 function displayRules() {
   homeWindow.classList.add("hidden");
   answerWindow.classList.add("hidden");
+  form.classList.add("hidden");
   rulesTab.classList.remove("hidden");
 }
 
 function displayForm() {
   homeWindow.classList.add("hidden");
   answerWindow.classList.add("hidden");
+  rulesTab.classList.add("hidden");
   form.classList.remove("hidden");
+}
+
+function stopPageRefresh(event){
+  event.preventDefault()
+  formSuccess.textContent = "Your form submission was a success";
 }
 
 

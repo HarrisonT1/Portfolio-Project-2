@@ -5,6 +5,7 @@ let questionHeading = document.querySelector("#question-heading h2");
 let removeBtn = document.getElementById("answer-container");
 let resetBtn = document.getElementById("reset-btn");
 let resetBtnContainer = document.getElementById("reset-btn-container");
+let form = document.getElementById("form")
 
 // rules tab
 let openRules = document.getElementById("open-rules")
@@ -47,12 +48,19 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   resetBtn.addEventListener("click", restartQuiz);
   openRules.addEventListener("click", displayRules);
+  form.addEventListener("click",  displayForm)
 });
 
 function displayRules() {
   homeWindow.classList.add("hidden");
   answerWindow.classList.add("hidden");
   rulesTab.classList.remove("hidden");
+}
+
+function displayForm() {
+  homeWindow.classList.add("hidden");
+  answerWindow.classList.add("hidden");
+  form.classList.remove("hidden");
 }
 
 

@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
   openRules.addEventListener("click", displayRules);
   openForm.addEventListener("click",  displayForm);
   form.addEventListener("submit",  stopPageRefresh);
+  form.addEventListener("submit",  sendEmail);
 });
 
 function displayRules() {
@@ -199,3 +200,22 @@ function correctAnswer(btn, i) {
     newQuestion();
   }, 2000);
 }
+
+
+emailjs.init("0AAPMhtZXrBnJhuK7");
+
+function sendEmail() {
+
+  let name = document.getElementById("name").value
+  let email = document.getElementById("email").value
+  let textArea = document.getElementById("text-area").value
+
+  let parameters = {
+    name: name, 
+    email: email, 
+    textArea: textArea
+  };
+
+  emailjs.send("service_5tiv1bh","template_oeeanua", parameters);
+
+}  

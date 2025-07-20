@@ -1,3 +1,4 @@
+/* google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
@@ -37,12 +38,7 @@ h1, h2 {
   display: none;
 }
 
-/* #home-window #heading {
-  padding: 2%;
-} */
-
 /* Global - end */
-
 
 /* header/nav */
 ul {
@@ -113,7 +109,6 @@ nav {
 .options-container {
   display: grid;
   margin: auto;
-  /* gap: 3rem; */
   margin-top: 20px;
 }
 
@@ -141,12 +136,16 @@ nav {
   background-color: rgb(46, 46, 46);;
 }
 
+/* score */
+
 #score {
   margin: 0;
   margin-top: 3%;
   padding: 0;
   font-size: 250%;
 }
+
+/* reset button */
 
 #reset-btn {
   background-color: rgb(8, 8, 8);
@@ -250,7 +249,6 @@ footer {
   .options-container {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
-    /* margin-top: 50px; */
     padding-top: 35px;
     width: 100%;
     gap: 4rem;
@@ -260,16 +258,11 @@ footer {
   .option {
     height: 70px;
     max-width: 200px;
-    /* margin: 10px 20px 30px 30px; */
   }
 
   .container {
    width: 80%;
   }
-
-  /* h1, h2 {
-    font-size: 2.5vw;
-  } */
 }
 
 @media screen and (min-width: 992px) {

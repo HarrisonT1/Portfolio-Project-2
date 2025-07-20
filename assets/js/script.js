@@ -1,3 +1,5 @@
+// general variables
+
 let optionsContainer = document.getElementById("options-container");
 let homeWindow = document.getElementById("home-window");
 let answerWindow = document.getElementById("answer-window");
@@ -37,6 +39,10 @@ let questionArray = [];
 
 let optionChoice = false;
 
+/**
+ * this event listener waits for the dom to load before starting the quiz
+*/
+
 document.addEventListener("DOMContentLoaded", function() {
 
   for (let option of options) {
@@ -58,12 +64,19 @@ document.addEventListener("DOMContentLoaded", function() {
   form.addEventListener("submit",  sendEmail);
 });
 
+/**
+ * Once the 'rules' button is pressed in the navigation bar, the rules are shown and everything else is hidden
+*/
 function displayRules() {
   homeWindow.classList.add("hidden");
   answerWindow.classList.add("hidden");
   form.classList.add("hidden");
   rulesTab.classList.remove("hidden");
 }
+
+/**
+ * Once the 'contact us' button is pressed in the navigation bar, the form are shown and everything else is hidden
+*/
 
 function displayForm() {
   homeWindow.classList.add("hidden");
@@ -72,11 +85,18 @@ function displayForm() {
   form.classList.remove("hidden");
 }
 
+/**
+ * this stops the page from refreshing after the submit button is pressed to allow the submit message to be shown
+*/
+
 function stopPageRefresh(event){
   event.preventDefault()
   formSuccess.textContent = "Your form submission was a success";
 }
 
+/**
+ * This displays a good luck message once a topic is selected
+*/
 
 function goodLuckMessage(optionChoice) {
   for (let option of optionsArray) {
@@ -85,6 +105,10 @@ function goodLuckMessage(optionChoice) {
     }
   }
 }
+
+/**
+ * This displays a topic once user has selected one
+*/
 
 function showTopic(optionChoice) {
 
@@ -104,10 +128,18 @@ function showTopic(optionChoice) {
   newQuestion();
 }
 
+/**
+ * This hides the homepage once a topic or navigation element is selected 
+*/
+
 function hideHomepage() {
   optionsContainer.classList.remove("options-container");
   optionsContainer.classList.add("hidden");
 }
+
+/**
+ * This displays a new question once the last one is answered
+*/
 
 function newQuestion() {
   choiceBoxArray.forEach(option => {
@@ -149,9 +181,17 @@ function newQuestion() {
   finishQuiz()
 }
 
-function increamentScore() {
+/**
+ * This increments the score once the selected answer is correct
+*/
+
+function incrementScore() {
   correctScore++
 }
+
+/**
+ * This displays a screen after the quiz is completed to congratulate the user and display their final score
+*/
 
 function finishQuiz(i) {
   if (questionIndex === 5) {
@@ -163,6 +203,10 @@ function finishQuiz(i) {
     score.textContent = `congratulations you finished the quiz. Your score was ${correctScore}.`;
   }
 }
+
+/**
+ * This restarts the quiz once the user uses the reset button at the end of the quiz
+*/
 
 function restartQuiz() {
   correctScore = 0;
@@ -178,6 +222,10 @@ function restartQuiz() {
 
 }
 
+/**
+ * This detects if the users answer is correct 
+*/
+
 function correctAnswer(btn, i) {
   let correctQuestionAnswer = questionArray[questionIndex].answers[i].correct;
   let option = choiceBoxArray[i];
@@ -188,7 +236,7 @@ function correctAnswer(btn, i) {
   if (correctQuestionAnswer){
     option.classList.remove("option-background");
     option.classList.add("correct-answer");
-    increamentScore();
+    incrementScore();
     score.textContent = `Correct answers: ${correctScore}/5`;
   } else {
     option.classList.remove("option-background");
@@ -200,6 +248,8 @@ function correctAnswer(btn, i) {
     newQuestion();
   }, 2000);
 }
+
+// This function adds an automatic email submission to the form to allow users to give feedback on the quiz using Emailjs
 
 
 emailjs.init("0AAPMhtZXrBnJhuK7");

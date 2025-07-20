@@ -271,6 +271,9 @@ footer {
     height: 40px;
   }
 
+  #rules {
+    font-size: 90%
+  }
 }
 @media screen and (min-width: 756px) {
 

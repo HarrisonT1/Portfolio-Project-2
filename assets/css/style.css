@@ -274,6 +274,10 @@ footer {
   #rules {
     font-size: 90%
   }
+  
+  #image-404 img {
+    height: 100px;
+  }
 }
 @media screen and (min-width: 756px) {
 

@@ -84,9 +84,7 @@ nav {
   max-width: 600px;
   height: 60vh;
   border-radius: 20px;
-  margin: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin: 5vh auto;
   padding: 5px;
 }
 
@@ -278,6 +276,7 @@ footer {
     height: 100px;
   }
 }
+
 @media screen and (min-width: 756px) {
 
     #home-window {

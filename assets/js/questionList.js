@@ -44,7 +44,7 @@ const generalKnowledgeQuestions = [
       { option: "Increases drop rate of rare items", correct: true }
     ]
   }
-]
+];
 
 const bossingQuestions = [
   {
@@ -92,7 +92,7 @@ const bossingQuestions = [
       { option: "Kraken", correct: false }
     ]
   }
-]
+];
 
 const skillingQuestions = [
   {
@@ -140,7 +140,7 @@ const skillingQuestions = [
       { option: "Irit", correct: false }
     ]
   }
-]
+];
 
 const itemsQuestions = [
   {
@@ -188,4 +188,4 @@ const itemsQuestions = [
       { option: "Granite maul", correct: false }
     ]
   },
-]
+];

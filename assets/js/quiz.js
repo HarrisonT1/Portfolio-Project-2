@@ -9,14 +9,13 @@ let resetBtn = document.getElementById("reset-btn");
 let resetBtnContainer = document.getElementById("reset-btn-container");
 
 // form
-let openForm = document.getElementById("open-form")
-let form = document.getElementById("form")
-let formSuccess = document.getElementById("form-success")
-let sumbitBtn = document.getElementById("sumbit-btn")
+let openForm = document.getElementById("open-form");
+let form = document.getElementById("form");
+let formSuccess = document.getElementById("form-success");
 
 // rules tab
-let openRules = document.getElementById("open-rules")
-let rulesTab = document.getElementById("rules")
+let openRules = document.getElementById("open-rules");
+let rulesTab = document.getElementById("rules");
 
 // choice of answer for questions
 let choice = document.getElementsByClassName("answer");
@@ -90,7 +89,7 @@ function displayForm() {
 */
 
 function stopPageRefresh(event){
-  event.preventDefault()
+  event.preventDefault();
   formSuccess.textContent = "Your form submission was a success";
 }
 
@@ -173,12 +172,12 @@ function newQuestion() {
       btn.textContent = answer.option;
 
       btn.onclick = function() {
-        correctAnswer(btn, i)
-      }
+        correctAnswer(btn, i);
+      };
     }
 
   }   
-  finishQuiz()
+  finishQuiz();
 }
 
 /**
@@ -186,7 +185,7 @@ function newQuestion() {
 */
 
 function incrementScore() {
-  correctScore++
+  correctScore++;
 }
 
 /**
@@ -195,7 +194,6 @@ function incrementScore() {
 
 function finishQuiz(i) {
   if (questionIndex === 5) {
-    let option = choiceBoxArray[i];
     removeBtn.classList.remove("options-container");
     removeBtn.classList.add("hidden");
     resetBtnContainer.classList.remove("hidden");
@@ -256,9 +254,9 @@ emailjs.init("0AAPMhtZXrBnJhuK7");
 
 function sendEmail() {
 
-  let name = document.getElementById("name").value
-  let email = document.getElementById("email").value
-  let textArea = document.getElementById("text-area").value
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let textArea = document.getElementById("text-area").value;
 
   let parameters = {
     name: name, 

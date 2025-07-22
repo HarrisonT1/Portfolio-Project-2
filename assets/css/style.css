@@ -188,7 +188,7 @@ nav {
   text-align: center;
 }
 
-#sumbit-btn {
+#submit-btn {
   width: 70px;
   height: 30px;
   border-radius: 20px;
@@ -196,7 +196,7 @@ nav {
   margin-top: 10px;
 }
 
-#sumbit-btn:hover {
+#submit-btn:hover {
   background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
